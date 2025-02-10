@@ -1,10 +1,20 @@
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type f"
+export PATH="$PATH:$HOME/google-cloud-sdk/bin"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # General aliases
 alias psyu="sudo pacman -Syu"
 alias prns="sudo pacman -Rns"
+alias psy="sudo pacman -S --noconfirm"
+alias vim="nvim"
 alias e="nvim"
+alias open="xdg-open"
+alias o="xdg-open"
+alias phd="cd $HOME/Documents/twindevops/"
+alias tobi="hyprctl keyword monitor 'eDP-1, disable'"
+alias tonbi="hyprctl keyword monitor 'eDP-1, 1920x1080@60, 0x0, 1'"
 
 # Kitty related
 alias d="kitten diff"
@@ -28,4 +38,6 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gp="git push"
+alias gf="git fetch"
+alias gP="git pull"
 
