@@ -5,24 +5,18 @@
     "layer": "top",
     "margin-bottom": 0,
 
-    // Position BOTTOM
-    // "position": "bottom",
-    // "margin-top": 0,
-    // "margin-bottom": 14,
-    
     "margin-left": 0,
-    "margin-right": 0,    
+    "margin-right": 0,
     "spacing": 0,
 
     // Load Modules
     "include": [
-        "~/.config/waybar/waybar-quicklinks.json",
         "~/.config/waybar/modules.json"
     ],
 
     // Modules Left
     "modules-left": [
-        // "custom/settings",
+        "custom/settings",
         "hyprland/workspaces"
     ],
 
@@ -34,6 +28,7 @@
     // Modules Right    
     "modules-right": [
         "pulseaudio",
+	// "wireplumber",
         "bluetooth",
         "battery", 
         "network",
@@ -42,8 +37,6 @@
         "custom/hypridle",
         "custom/hyprshade",
         "tray",
-        // "custom/exit",
-        // "custom/ml4w-welcome",
         "clock"
     ]
 }

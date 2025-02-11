@@ -2,35 +2,11 @@
     // Workspaces
     "hyprland/workspaces" : {
         "on-click": "activate",
-        "active-only": false,
-        "all-outputs": true,
         "format": "{}",
         "format-icons": {
 			"urgent": "",
 			"active": "",
 			"default": ""
-        },
-        "persistent-workspaces": {
-             "*": 5
-        }
-    },
-
-    // Taskbar
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "ignore-list": [
-           "kitty"
-        ],
-        "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
-        },
-        "rewrite": {
-            "Firefox Web Browser": "Firefox",
-            "Foot Server": "Terminal"
         }
     },
 
@@ -43,7 +19,8 @@
             "(.*) - Outlook": "$1",
             "(.*) Microsoft Teams": "$1"
         },
-        "separate-outputs": true
+        "separate-outputs": true,
+        "max-length": 50
     },
 
     // Cliphist
@@ -52,7 +29,7 @@
         "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
         "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
         "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
-        "tooltip": false
+        "tooltip-format": "Clipboard History"
     },
 
     // Hyprshade
@@ -75,39 +52,10 @@
         "on-click-right": "hyprlock"
     },
 
-    // Waybar Themes
-    "custom/waybarthemes": {
-        "format": "",
-        "on-click": "~/.config/waybar/themeswitcher.sh",
-        "tooltip": false
-    },
-
     // Settings
     "custom/settings": {
         "format": "",
-        "on-click": "~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
-        "tooltip": false
-    },
-
-    // Keybindings
-    "custom/keybindings": {
-        "format": "",
-        "on-click": "~/.config/hypr/scripts/keybindings.sh",
-        "tooltip": false
-    },
-
-    // ML4W Welcome App
-    "custom/ml4w-welcome": {
-        "on-click": "sleep 0.1 && ~/.config/ml4w/settings/ml4w-sidebar.sh",
-        "on-click-right": "sleep 0.1 && com.ml4w.welcome",
-        "format": " ",
-        "tooltip-format": "Open Sidebar"
-    },
-
-    // Power Menu
-    "custom/exit": {
-        "format": "",
-        "on-click": "wlogout",
+        "on-click": "systemsettings",
         "tooltip": false
     },
 
@@ -199,21 +147,22 @@
     // Network
     "network": {
         "format": "{ifname}",
-        "format-wifi": "   {signalStrength}%",
+        "format-wifi": "   {essid} ({signalStrength}%)",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "Not connected", //An empty format will hide the module.
         "tooltip-format": " {ifname} via {gwaddri}",
-        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-wifi": "SSID\t\t{essid}\nFrequency\t{frequency} GHz\nStrength\t\t{signaldBm} dBm ({signalStrength}%)\nIP\t\t\t{ipaddr}/{cidr}\n\nDL\t\t\t{bandwidthDownBytes}\nUL\t\t\t{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "IP\t{ipaddr}/{cidr}\n\nDL\t{bandwidthDownBytes}\nUL\t{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
+        "interval": 30,
         "on-click": "nm-connection-editor"
     },
 
     // Battery
     "battery": {
         "states": {
-            // "good": 95,
+            // "good": 90,
             "warning": 30,
             "critical": 15
         },
@@ -223,18 +172,22 @@
         "format-alt": "{icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "tooltip-format": "Charged at {capacity}%\n{time} remaining\n\nBattery health: {health}%\nCycle count: {cycles}",
+        "tooltip-format-charging": "Charged at {capacity}%\n{time} until fully charged\n\nPower draw\t{power:.1f} W\n\nBattery health\t{health} %\nCycle count\t{cycles}",
+        "tooltip-format-full": "Battery full\n\nBattery health: {health}%\nCycle count: {cycles}",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "interval": 30
     },
 
     // Pulseaudio
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "scroll-step": 5, // %, can be a float
+        "format": "{icon}  {volume}%",
         "format-bluetooth": "{volume}%  {icon} {format_source}",
         "format-bluetooth-muted": "  {icon} {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-muted": "   {volume}%",
+        "format-source": "  {volume}%",
+        "format-source-muted": "  {volume}%",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -244,13 +197,25 @@
             "car": "",
             "default": ["", " ", " "]
         },
-        "on-click": "pavucontrol"
+        "tooltip-format": "{desc}\t\t{volume}%",
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    // WirePlumber
+    "wireplumber": {
+        "scroll-step": 5,
+        "format": "{icon}  {volume}%",
+        "format-muted": "   {volume}%",
+        "on-click": "helvum",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "format-icons": ["", " ", " "]
     },
 
     // Bluetooth
     "bluetooth": {
-        "format-disabled": " {status}",
-        "format-off": " {status}",
+        "format-disabled": "",
+        "format-off": "",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
         "interval": 30,
@@ -260,13 +225,6 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\t{device_battery_percentage}%",
         "on-click": "blueman-manager",
         "format-no-controller": ""
-    },
-
-    // Other
-    "user": {
-        "format": "{user}",
-        "interval": 60,
-        "icon": false,
     },
 
     // Idle Inhibator
