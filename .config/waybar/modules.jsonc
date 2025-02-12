@@ -32,14 +32,6 @@
         "tooltip-format": "Clipboard History"
     },
 
-    // Hyprshade
-    "custom/hyprshade": {
-        "format": "",
-        "on-click": "sleep 0.1; ~/.config/hypr/scripts/hyprshade.sh",
-        "on-click-right": "sleep 0.1; ~/.config/hypr/scripts/hyprshade.sh rofi",
-        "tooltip": false
-    },
-
     // Hypridle inhibitor
     "custom/hypridle": {
         "format": "",
@@ -52,24 +44,6 @@
         "on-click-right": "hyprlock"
     },
 
-    // Settings
-    "custom/settings": {
-        "format": "",
-        "on-click": "systemsettings",
-        "tooltip": false
-    },
-
-    // Keyboard State
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-
     // System tray
     "tray": {
         "icon-size": 21,
@@ -78,7 +52,7 @@
 
     // Clock
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "{:%a %b %d %H:%M}",
         "on-click": "swaync-client -t",
         "tooltip": false
     },
@@ -109,10 +83,6 @@
         "on-click": "kitty -e htop"
     },
 
-    "hyprland/language": {
-        "format": "/ KB: {short}"
-    },
-
     // Group Hardware
     "group/hardware": {
         "orientation": "inherit",
@@ -126,28 +96,13 @@
             "disk",
             "cpu",
             "memory",
-            "hyprland/language"
-        ]
-    },
-
-    // Group Settings
-    "group/settings": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "custom/settings",
-            "custom/waybarthemes",
         ]
     },
 
     // Network
     "network": {
         "format": "{ifname}",
-        "format-wifi": "   {essid} ({signalStrength}%)",
+        "format-wifi": "   {essid}",
         "format-ethernet": "  {ipaddr}",
         "format-disconnected": "Not connected", //An empty format will hide the module.
         "tooltip-format": " {ifname} via {gwaddri}",
@@ -179,7 +134,7 @@
         "interval": 30
     },
 
-    // iPhone
+    // Apple devices
     "custom/idevice_battery": {
         "exec": "~/.config/waybar/scripts/idevice_battery.sh",
         "hide-empty-text": true,
@@ -187,7 +142,6 @@
         "interval": 30,
         "format": " {}%",
         "tooltip": true,
-        // "tooltip-format": "{}%"
     },
 
     // Pulseaudio

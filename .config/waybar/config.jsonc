@@ -2,7 +2,7 @@
     // General Settings
 
     "layer": "top",
-    "height": 20,
+    //"height": 20,
     "margin-bottom": 0,
 
     "margin-left": 0,
@@ -16,19 +16,16 @@
 
     // Modules Left
     "modules-left": [
-        "custom/settings",
         "hyprland/workspaces"
     ],
 
     // Modules Center
     // "modules-center": [
-    //     "hyprland/window",
     // ],
 
     // Modules Right    
     "modules-right": [
         "pulseaudio",
-	// "wireplumber",
         "bluetooth",
         "battery",
 	"custom/idevice_battery",
@@ -36,7 +33,6 @@
         "group/hardware",
         "custom/cliphist",
         "custom/hypridle",
-        "custom/hyprshade",
         "tray",
         "clock"
     ]
