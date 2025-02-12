@@ -1,8 +1,8 @@
 {
     // General Settings
 
-    // Position TOP
     "layer": "top",
+    "height": 20,
     "margin-bottom": 0,
 
     "margin-left": 0,
@@ -11,7 +11,7 @@
 
     // Load Modules
     "include": [
-        "~/.config/waybar/modules.json"
+        "~/.config/waybar/modules.jsonc"
     ],
 
     // Modules Left
@@ -21,9 +21,9 @@
     ],
 
     // Modules Center
-    "modules-center": [
-        "hyprland/window",
-    ],
+    // "modules-center": [
+    //     "hyprland/window",
+    // ],
 
     // Modules Right    
     "modules-right": [
