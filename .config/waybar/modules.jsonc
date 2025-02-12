@@ -79,7 +79,7 @@
     // Clock
     "clock": {
         "format": "{:%H:%M}",
-        "on-click": "ags -t calendar",
+        "on-click": "swaync-client -t",
         "tooltip": false
     },
 
