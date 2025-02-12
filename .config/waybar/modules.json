@@ -172,11 +172,22 @@
         "format-alt": "{icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "tooltip-format": "Charged at {capacity}%\n{time} remaining\n\nBattery health: {health}%\nCycle count: {cycles}",
+        "tooltip-format": "Charged at {capacity}%\n{time} remaining\n\nBattery health\t{health}%\nCycle count\t{cycles}",
         "tooltip-format-charging": "Charged at {capacity}%\n{time} until fully charged\n\nPower draw\t{power:.1f} W\n\nBattery health\t{health} %\nCycle count\t{cycles}",
-        "tooltip-format-full": "Battery full\n\nBattery health: {health}%\nCycle count: {cycles}",
+        "tooltip-format-full": "Battery full\n\nBattery health\t{health}%\nCycle count\t{cycles}",
         "format-icons": [" ", " ", " ", " ", " "],
         "interval": 30
+    },
+
+    // iPhone
+    "custom/idevice_battery": {
+        "exec": "~/.config/waybar/scripts/idevice_battery.sh",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "interval": 30,
+        "format": " {}%",
+        "tooltip": true,
+        // "tooltip-format": "{}%"
     },
 
     // Pulseaudio
@@ -197,7 +208,7 @@
             "car": "",
             "default": ["", " ", " "]
         },
-        "tooltip-format": "{desc}\t\t{volume}%",
+        "tooltip-format": "{desc}",
         "on-click": "pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
