@@ -19,7 +19,7 @@
  * ----------------------------------------------------- */
 
 * {
-    font-family: Helvetica, Arial, "JetBrainsMono Nerd Font", FontAwesome, Roboto, sans-serif;
+    font-family: Roboto, Helvetica, "JetBrainsMono Nerd Font", FontAwesome, sans-serif;
     border: none;
     border-radius: 0px;
     padding: 0;
@@ -102,7 +102,6 @@ tooltip label {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
-#custom-cliphist,
 #custom-wallpaper,
 #custom-system,
 #custom-hypridle {

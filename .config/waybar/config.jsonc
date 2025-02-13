@@ -30,8 +30,6 @@
         "battery",
 	"custom/idevice_battery",
         "network",
-        //"group/hardware",
-        "custom/cliphist",
         "custom/hypridle",
         "tray",
         "clock"

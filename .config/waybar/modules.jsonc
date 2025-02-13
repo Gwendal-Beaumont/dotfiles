@@ -23,15 +23,6 @@
         "max-length": 50
     },
 
-    // Cliphist
-    "custom/cliphist": {
-        "format": "",
-        "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
-        "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
-        "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
-        "tooltip-format": "Clipboard History"
-    },
-
     // Hypridle inhibitor
     "custom/hypridle": {
         "format": "",
@@ -128,8 +119,8 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "tooltip-format": "Charged at {capacity}%\n{time} remaining\n\nBattery health\t{health}%\nCycle count\t{cycles}",
-        "tooltip-format-charging": "Charged at {capacity}%\n{time} until fully charged\n\nPower draw\t{power:.1f} W\n\nBattery health\t{health} %\nCycle count\t{cycles}",
-        "tooltip-format-full": "Battery full\n\nBattery health\t{health}%\nCycle count\t{cycles}",
+        "tooltip-format-charging": "Charged at {capacity}%\n{time} until fully charged\n\nPower draw\t{power:.1f} W\n\nBattery health\t{health} %\nCycle count\t\t{cycles}",
+        "tooltip-format-full": "Battery full\n\nBattery health\t{health}%\nCycle count\t\t{cycles}",
         "format-icons": [" ", " ", " ", " ", " "],
         "interval": 30
     },
