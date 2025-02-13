@@ -19,11 +19,7 @@
         "hyprland/workspaces"
     ],
 
-    // Modules Center
-    // "modules-center": [
-    // ],
-
-    // Modules Right    
+    // Modules Right
     "modules-right": [
         "pulseaudio",
         "bluetooth",

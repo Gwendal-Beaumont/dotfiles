@@ -10,19 +10,6 @@
         }
     },
 
-    // Hyprland Window
-    "hyprland/window": {
-        "rewrite": {
-            "(.*) - Brave": "$1",
-            "(.*) - Chromium": "$1",
-            "(.*) - Brave Search": "$1",
-            "(.*) - Outlook": "$1",
-            "(.*) Microsoft Teams": "$1"
-        },
-        "separate-outputs": true,
-        "max-length": 50
-    },
-
     // Hypridle inhibitor
     "custom/hypridle": {
         "format": "",
@@ -46,48 +33,6 @@
         "format": "{:%a %d %b %H:%M}",
         "on-click": "swaync-client -t",
         "tooltip": false
-    },
-
-    // System
-    "custom/system": {
-        "format": "",
-        "tooltip": false
-    },
-
-    // CPU
-    "cpu": {
-        "format": "/ CPU: {usage}% ",
-        "on-click": "kitty -e htop"
-    },
-
-    // Memory
-    "memory": {
-        "format": "/ RAM: {}% ",
-        "on-click": "kitty -e htop"
-    },
-
-    // Harddisc space used
-    "disk": {
-        "interval": 30,
-        "format": "SSD: {percentage_used}% ",
-        "path": "/",
-        "on-click": "kitty -e htop"
-    },
-
-    // Group Hardware
-    "group/hardware": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "not-memory",
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "custom/system",
-            "disk",
-            "cpu",
-            "memory",
-        ]
     },
 
     // Network
@@ -156,16 +101,6 @@
         "tooltip-format": "{desc}",
         "on-click": "pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-    },
-
-    // WirePlumber
-    "wireplumber": {
-        "scroll-step": 5,
-        "format": "{icon}  {volume}%",
-        "format-muted": "   {volume}%",
-        "on-click": "helvum",
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "format-icons": ["", " ", " "]
     },
 
     // Bluetooth
