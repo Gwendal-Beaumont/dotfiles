@@ -3,7 +3,7 @@
  * ----------------------------------------------------- */
 /* @import 'style-light.css'; */
 @define-color wb-bg-light rgba(200, 200, 200, 0.7);
-@define-color wb-bg rgba(46, 46, 46, 0.7);
+@define-color wb-bg rgba(20, 20, 20, 0.8);
 @define-color backgroundLight #FFFFFF;
 @define-color backgroundDark rgba(46, 46, 46, 0.7);
 @define-color workspacesbackground1 #FFFFFF;
@@ -12,7 +12,7 @@
 @define-color borderDark rgb(90, 90, 90);
 @define-color textLight #000000;
 @define-color textDark #FFFFFF;
-@define-color iconcolor #000000;
+@define-color iconcolor #FFFFFF;
 
 /* -----------------------------------------------------
  * General
@@ -27,7 +27,7 @@
 }
 
 window#waybar {
-    background-color: @wb-bg-light;
+    background-color: @wb-bg;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -39,35 +39,34 @@ window#waybar {
 #workspaces {
     margin: 0px 5px;
     padding: 0px 1px;
-    border-radius: 15px;
+    border-radius: 7px;
     border: 0px;
-    font-weight: bold;
     font-style: normal;
     font-size: 14px;
-    color: @textLight;
+    color: @textDark;
 }
 
 #workspaces button {
     padding: 0px 5px;
     margin: 0px 4px;
-    border-radius: 15px;
+    border-radius: 7px;
     border: 0px;
-    color: @textLight;
+    color: @textDark;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
     color: @textLight;
     background: @workspacesbackground1;
-    border-radius: 15px;
-    min-width: 40px;
+    border-radius: 7px;
+    min-width: 30px;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
     color: @textLight;
     background: @workspacesbackground2;
-    border-radius: 15px;
+    border-radius: 7px;
 }
 
 /* -----------------------------------------------------
@@ -75,16 +74,16 @@ window#waybar {
  * ----------------------------------------------------- */
 
 tooltip {
-    border-radius: 10px;
-    background-color: @backgroundLight;
+    border-radius: 7px;
+    background-color: @backgroundDark;
     opacity:0.9;
     padding:20px;
     margin:0px;
-    border: 1px solid @borderLight;
+    border: 1px solid @borderDark;
 }
 
 tooltip label {
-    color: @textLight;
+    color: @textDark;
 }
 
 /* -----------------------------------------------------
@@ -107,14 +106,10 @@ tooltip label {
 #custom-wallpaper,
 #custom-system,
 #custom-hypridle {
-    margin-right: 23px;
-    font-size: 20px;
-    font-weight: bold;
+    margin: 0px 10px;
+    font-size: 16px;
+    /*font-weight: bold;*/
     color: @iconcolor;
-}
-
-#custom-hypridle {
-    margin-right:16px;
 }
 
 #custom-hypridle.active {
@@ -130,7 +125,7 @@ tooltip label {
  * ----------------------------------------------------- */
 
  #idle_inhibitor {
-    margin-right: 15px;
+    /*margin-right: 15px;*/
     font-size: 22px;
     font-weight: bold;
     opacity: 0.8;
@@ -138,7 +133,7 @@ tooltip label {
 }
 
 #idle_inhibitor.activated {
-    margin-right: 15px;
+    /*margin-right: 15px;*/
     font-size: 20px;
     font-weight: bold;
     opacity: 0.8;
@@ -155,24 +150,20 @@ tooltip label {
 
 #custom-idevice_battery {
     font-size: 14px;
-    color: @textLight;
-    padding: 2px 5px;
-    margin: 0px 10px;
+    color: @textDark;
+    padding: 2px 0px;
+    margin: 0px 0px;
 }
 
 /* -----------------------------------------------------
  * Hardware Group
  * ----------------------------------------------------- */
 
- #disk,#memory,#cpu,#language {
-    margin:0px;
-    padding:0px;
+ #disk,#memory,#cpu {
+    margin:0px 0px;
+    padding:2px 0px;
     font-size:14px;
     color:@iconcolor;
-}
-
-#language {
-    margin-right:10px;
 }
 
 /* -----------------------------------------------------
@@ -181,9 +172,9 @@ tooltip label {
 
 #clock {
     font-size: 14px;
-    color: @textLight;
+    color: @textDark;
     padding: 2px 5px;
-    margin: 0px 10px;
+    margin: 0px 5px;
 }
 
 /* -----------------------------------------------------
@@ -192,13 +183,13 @@ tooltip label {
 
 #pulseaudio {
     font-size: 14px;
-    color: @textLight;
+    color: @textDark;
     padding: 2px 5px;
-    margin: 0px 10px;
+    margin: 0px 5px;
 }
 
 #pulseaudio.muted {
-    color: @textLight;
+    color: @textDark;
 }
 
 /* -----------------------------------------------------
@@ -208,24 +199,9 @@ tooltip label {
 #network {
     background-color: transparent;
     font-size: 14px;
-    color: @textLight;
-    /*padding: 2px 10px 0px 10px;*/
-    margin: 0px 10px;
-}
-
-#network.ethernet {
-    background-color: transparent;
-    color: @textLight;
-}
-
-#network.wifi {
-    background-color: transparent;
-    color: @textLight;
-}
-
-#network.disconnected {
-    background-color: transparent;
-    color: @textLight;
+    color: @textDark;
+    padding: 2px 5px;
+    margin: 0px 5px;
 }
 
 /* -----------------------------------------------------
@@ -235,10 +211,10 @@ tooltip label {
  #bluetooth, #bluetooth.on, #bluetooth.connected {
     background-color: @backgroundLight;
     font-size: 14px;
-    color: @textLight;
+    color: @textDark;
     border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 0px 10px;
+    padding: 2px 5px;
+    margin: 0px 5px;
 }
 
 #bluetooth.off {
@@ -252,17 +228,14 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #battery {
-    /*background-color: @backgroundLight;*/
     font-size: 14px;
-    color: @textLight;
-    /*border-radius: 15px;*/
+    color: @textDark;
     padding: 2px 5px;
-    margin: 0px 10px;
+    margin: 0px 5px;
 }
 
 #battery.charging, #battery.plugged {
-    color: @textLight;
-    /*background-color: @backgroundLight;*/
+    color: @textDark;
 }
 
 @keyframes blink {
@@ -287,7 +260,7 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #tray {
-    margin:0px 10px;
+    margin:0px 5px;
 }
 
 #tray > .passive {
@@ -307,14 +280,3 @@ label:focus {
     background-color: #000000;
 }
 
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
-}
