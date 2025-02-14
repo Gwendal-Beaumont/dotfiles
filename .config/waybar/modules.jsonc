@@ -38,11 +38,11 @@
     // Network
     "network": {
         "format": "{ifname}",
-        "format-wifi": "   {essid}",
-        "format-ethernet": "  {ipaddr}",
+        "format-wifi": "\t{essid}",
+        "format-ethernet": "\t{ipaddr}",
         "format-disconnected": "Not connected", //An empty format will hide the module.
         "tooltip-format": " {ifname} via {gwaddri}",
-        "tooltip-format-wifi": "SSID\t\t{essid}\nFrequency\t{frequency} GHz\nStrength\t\t{signaldBm} dBm ({signalStrength}%)\nIP\t\t\t{ipaddr}/{cidr}\n\nDL\t\t\t{bandwidthDownBytes}\nUL\t\t\t{bandwidthUpBytes}",
+        "tooltip-format-wifi": "SSID\t\t{essid}\nFrequency\t{frequency} GHz\nStrength\t{signaldBm} dBm ({signalStrength}%)\nIP\t\t\t{ipaddr}/{cidr}\n\nDownload\t{bandwidthDownBytes}\nUpload\t\t{bandwidthUpBytes}",
         "tooltip-format-ethernet": "IP\t{ipaddr}/{cidr}\n\nDL\t{bandwidthDownBytes}\nUL\t{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
@@ -57,12 +57,12 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}  {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format": "{icon}\t{capacity}%",
+        "format-charging": "\t{capacity}%",
+        "format-plugged": "\t{capacity}%",
+        //"format-alt": "{icon}  {time}",
+        //"format-good": "", // An empty format will hide the module
+        //"format-full": "",
         "tooltip-format": "Charged at {capacity}%\n{time} remaining\n\nBattery health\t{health}%\nCycle count\t{cycles}",
         "tooltip-format-charging": "Charged at {capacity}%\n{time} until fully charged\n\nPower draw\t{power:.1f} W\n\nBattery health\t{health} %\nCycle count\t\t{cycles}",
         "tooltip-format-full": "Battery full\n\nBattery health\t{health}%\nCycle count\t\t{cycles}",
@@ -76,14 +76,14 @@
         "hide-empty-text": true,
         "return-type": "json",
         "interval": 30,
-        "format": " {}%",
+        "format": "\t{}%",
         "tooltip": true,
     },
 
     // Pulseaudio
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "{icon}  {volume}%",
+        "format": "{icon}\t{volume}%",
         "format-bluetooth": "{volume}%  {icon} {format_source}",
         "format-bluetooth-muted": "  {icon} {format_source}",
         "format-muted": "   {volume}%",
