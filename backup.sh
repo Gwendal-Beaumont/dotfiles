@@ -37,7 +37,7 @@ do
 			cp -r "$DOTCONFIG/$FOLDER/" $LOCAL_DOTCONFIG
 			echo "Backed up $FOLDER folder..."
 		;;
-		*) echo "Unsupported folder"
+		*) echo "Unsupported folder '$ARG'"
 		;;
 	esac
 done
