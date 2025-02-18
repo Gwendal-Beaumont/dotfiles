@@ -23,7 +23,7 @@
     (box :orientation "v" :space-evenly false :class "notifications-center"
         (box :orientation "h" :space-evenly true
             (label :class "notifications-header-text" :halign "start" :text "Notifications")
-            (button :halign "end" :class "notifications-clear-button" :onclick "scripts/notifications.sh clear" "Clear all")
+            (button :halign "end" :class "notifications-clear-button" :onclick "scripts/notifications.sh clear" "󰎟 Clear")
         )
         (scroll :vscroll true :class "notifications-scroll"
             (box :orientation "v" :space-evenly false

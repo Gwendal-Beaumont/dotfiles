@@ -18,20 +18,6 @@
     border-radius: 100%;
 }
 
-.open-powermenu-button {
-    background-color: $surfaceVariant;
-    color: $onSurface;
-    border-radius: 1rem;
-    padding: 0 1rem;
-    margin: 0.35rem 0;
-    margin-left: 0.5rem;
-    transition: 0.3s;
-}
-
-.open-powermenu-button:hover {
-    background-color: mix($surfaceVariant, $onSurfaceVariant, 70%);
-}
-
 .user-clock-time {
     font-size: 1.4rem;
 }
@@ -45,7 +31,7 @@
     font-size: 1.2rem;
 }
 
-.open-settings-button {
+.open-user-button {
     background-color: $surfaceVariant;
     color: $onSurface;
     border-radius: 0.5rem;

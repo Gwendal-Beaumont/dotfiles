@@ -1,0 +1,19 @@
+(defwidget backlight_scale []
+    (overlay :hexpand true
+        (scale  :min 0
+                :max 101
+                :value {brightness}
+                :onchange "brightnessctl --device='intel_backlight' set {}%"
+                :class "volume-scale")
+
+        (label :class 'volume-icon ${volume == "muted" ? "less" : volume < 5 ? "less" : "more"}'
+        :halign "start"
+        :text "☼")
+    )
+)
+
+(defwidget backlight_control_center []
+    (box :orientation "h" :class "volume-control-center" :space-evenly false
+        (backlight_scale)
+    )
+)

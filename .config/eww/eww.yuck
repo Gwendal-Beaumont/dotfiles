@@ -1,12 +1,12 @@
 (include "variables.yuck")
 (include "windows.yuck")
 
-
 (include "modules/bar.yuck")
 (include "modules/notifications_popup.yuck")
 (include "modules/control_center.yuck")
 
 (include "modules/volume.yuck")
+(include "modules/backlight.yuck")
 (include "modules/notifications.yuck")
 (include "modules/powermenu.yuck")
 (include "modules/quick_settings.yuck")
