@@ -34,6 +34,6 @@ do
 	esac
 	rm -rf "$LOCAL_DOTCONFIG/$FOLDER/"
 	cp -r "$DOTCONFIG/$FOLDER/" $LOCAL_DOTCONFIG
-	echo "Backed up $FOLDER folder..."
+	echo "'$FOLDER' folder has been backed up..."
 done
 
