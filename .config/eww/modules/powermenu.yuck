@@ -17,11 +17,11 @@
                             :onclick "systemctl reboot")
         (powermenu_entry    :label "Lock"
                             :icon "" 
-                            :onclick "eww close powermenu & hyprlock")
+                            :onclick "eww close powermenu & hyprlock &")
 
         (powermenu_entry    :label "Suspend" 
                             :icon "󰤄" 
-                            :onclick "sleep 0.1 && gtklock & systemctl suspend & eww close powermenu &")
+                            :onclick "eww close powermenu & systemctl suspend &")
                                 
         (powermenu_entry    :label "Sign out" 
                             :icon "󰗼" 

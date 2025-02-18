@@ -7,8 +7,10 @@
 )
 
 (defwidget tray2 []
-    (box :class "tray_box2" :orientation "h" :space-evenly false
-        (systray :hexpand true :halign "center" :pack-direction "left")
+    (box :class "indicator"
+        (box :class "tray_box2" :orientation "h" :space-evenly false
+            (systray :hexpand true :halign "center" :pack-direction "left" :spacing 5)
+        )
     )
 )
 
