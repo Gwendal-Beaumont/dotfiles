@@ -3,6 +3,7 @@
 DOTCONFIG=$HOME/.config/
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 LOCAL_DOTCONFIG=$SCRIPT_DIR/.config
+FOLDER=""
 
 # Start
 echo "Backing up files..."
@@ -15,30 +16,24 @@ do
 	case "$ARG" in
 		"hyprland" | "hypr")
 			FOLDER="hypr"
-			rm -rf "$LOCAL_DOTCONFIG/$FOLDER/"
-			cp -r "$DOTCONFIG/$FOLDER/" $LOCAL_DOTCONFIG
-			echo "Backed up $FOLDER folder..."
 		;;
 		"waybar")
 			FOLDER="waybar"
-			rm -rf "$LOCAL_DOTCONFIG/$FOLDER/"
-			cp -r "$DOTCONFIG/$FOLDER/" $LOCAL_DOTCONFIG
-			echo "Backed up $FOLDER folder..."
 		;;
 		"rofi")
 			FOLDER="rofi"
-			rm -rf "$LOCAL_DOTCONFIG/$FOLDER/"
-			cp -r "$DOTCONFIG/$FOLDER/" $LOCAL_DOTCONFIG
-			echo "Backed up $FOLDER folder..."
 		;;
 		"wlogout")
 			FOLDER="wlogout"
-			rm -rf "$LOCAL_DOTCONFIG/$FOLDER/"
-			cp -r "$DOTCONFIG/$FOLDER/" $LOCAL_DOTCONFIG
-			echo "Backed up $FOLDER folder..."
 		;;
-		*) echo "Unsupported folder '$ARG'"
+		"eww")
+			FOLDER="eww"
+		;;
+		*) echo "Unsupported folder '$ARG'" && exit 1
 		;;
 	esac
+	rm -rf "$LOCAL_DOTCONFIG/$FOLDER/"
+	cp -r "$DOTCONFIG/$FOLDER/" $LOCAL_DOTCONFIG
+	echo "Backed up $FOLDER folder..."
 done
 
