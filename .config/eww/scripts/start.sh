@@ -1,7 +1,16 @@
 #!/bin/bash
-pkill eww
-eww daemon
-eww open bar
-eww open bg_widgets
-eww open notifications_popup
-~/.config/eww/scripts/notifications.py &
+
+# Kill any running instances
+eww kill
+
+# Start a bar for each monitor
+MONITORS=$(hyprctl monitors -j | jq '.[] | .id')
+
+for monitor in ${MONITORS}; do
+    eww open bar --screen ${monitor} --id ${monitor}
+done
+
+# TODO: Work on the notification system
+
+# eww open notifications_popup
+# ~/.config/eww/scripts/notifications.py &
