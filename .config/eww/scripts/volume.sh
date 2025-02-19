@@ -1,13 +1,15 @@
 #!/bin/bash
 
-echo $(( 10#$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2}' | tr -d ".") ))
+get_volume () {
+  VOL=$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2 " " $3}' | tr -d ".[]")
+  PERCENTAGE=$(( 10#$(echo $VOL | awk '{print $1}') ))
+  MUTED=$(echo $VOL | awk '{print $2}')
+  
+  printf '{"percentage": "%s", "status": "%s"}\n' "$PERCENTAGE" "$MUTED"
+}
+
+get_volume
 
 pactl subscribe | rg --line-buffered "on sink" | while read -r _; do
-  VOL=$(( 10#$(wpctl get-volume @DEFAULT_SINK@ | awk '{print $2}' | tr -d ".") ))
-  if [ $VOL -eq 0 ]
-  then
-    echo $VOL
-  else
-    echo $VOL
-  fi
+  get_volume
 done

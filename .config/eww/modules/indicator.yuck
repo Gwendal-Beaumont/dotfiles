@@ -42,7 +42,7 @@
 
 (defwidget volume_icon []
     (state_icon :condition true
-                :text {volume == "muted" ? "󰸈" : volume < 33 ? " ${volume}%" : volume < 67 ? " ${volume}%" : " ${volume}%"}
+                :text {volume.status == "MUTED" ? "󰸈 ${volume.percentage}%" : volume.percentage < 33 ? " ${volume.percentage}%" : volume.percentage < 67 ? " ${volume.percentage}%" : " ${volume.percentage}%"}
     )
 )
 
