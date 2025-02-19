@@ -1,12 +1,15 @@
 #!/bin/bash
 
 # Kill any running instances
-eww kill
+pkill eww
 
 # Start a bar for each monitor
-MONITORS=$(hyprctl monitors -j | jq '.[] | .id')
+MONITORS=$(hyprctl monitors | awk -F': ' '/model/ {print $2}')
 
-for monitor in ${MONITORS}; do
+IFS=$'\n'
+for monitor in $MONITORS
+do
+    echo $monitor
     eww open bar --screen ${monitor} --id ${monitor}
 done
 
