@@ -9,26 +9,29 @@
 )
 
 (defwidget volume_scale []
-    (overlay :hexpand true
-        (scale :min 0
-            :max 101
-            :value {volume.percentage}
-            :onchange "wpctl set-volume @DEFAULT_SINK@ {}%"
-            :class "volume-scale")
-        (label :class 'volume-icon ${volume.status == "MUTED" ? "less" : volume.percentage < 5 ? "less" : "more"}'
-            :halign "start"
-            :text {volume.status == "MUTED" ? "󰸈" : volume.percentage < 33 ? "" : volume.percentage < 67 ? "" : ""})
+    (slider_scale
+        :scale_value {volume.percentage}
+        :scale_onchange "wpctl set-volume @DEFAULT_SINK@ {}%"
+        :label_text {volume.status == "MUTED" ? "󰸈" : volume.percentage < 33 ? "" : volume.percentage < 67 ? "" : ""}
     )
 )
 
 (defwidget volume_control_center []
-    (box :orientation "h"
-            :class "volume-control-center"
-            :space-evenly false
+    (box
+        :orientation "h"
+        :class "slider-control-center"
+        :space-evenly false
+
         (volume_scale)
-        (button :class "volume-mute ${volume.status == 'MUTED' ? 'active' : ''}"
-            :onclick "wpctl set-mute @DEFAULT_SINK@ toggle" "󰝟")
-        (button :class "volume-arrow"
-            :onclick "scripts/toggle_control_center.sh close && pavucontrol &" "󰅂")
+
+        (button
+            :class "volume-mute ${volume.status == 'MUTED' ? 'active' : ''}"
+            :onclick "wpctl set-mute @DEFAULT_SINK@ toggle" "󰝟"
+        )
+
+        (button
+            :class "volume-arrow"
+            :onclick "scripts/toggle_control_center.sh close && pavucontrol &" "󰅂"
+        )
     )
 )

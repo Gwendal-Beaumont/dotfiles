@@ -1,0 +1,17 @@
+(defwidget slider_scale [scale_value scale_onchange label_text]
+    (overlay :hexpand true
+
+        (scale :min 0
+            :max 101
+            :value scale_value
+            :onchange scale_onchange
+            :class "slider-scale"
+        )
+
+        (label :class 'slider-icon ${scale_value < 5 ? "less" : "more"}'
+            :halign "start"
+            :text label_text
+        )
+
+    )
+)

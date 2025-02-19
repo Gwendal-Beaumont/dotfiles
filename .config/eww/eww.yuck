@@ -5,6 +5,7 @@
 (include "modules/notifications_popup.yuck")
 (include "modules/control_center.yuck")
 
+(include "modules/slider.yuck")
 (include "modules/volume.yuck")
 (include "modules/backlight.yuck")
 (include "modules/notifications.yuck")

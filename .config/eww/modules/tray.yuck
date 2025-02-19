@@ -1,4 +1,4 @@
-(defwidget tray []
+(defwidget tray_dropdown []
     (revealer :transition "slideup" :reveal {open_tray} :duration {ANIM_DURATION}
         (box :class "tray_box" :orientation "h" :space-evenly false
             (systray :hexpand true :halign "center" :pack-direction "left")
@@ -6,7 +6,7 @@
     )
 )
 
-(defwidget tray2 []
+(defwidget tray []
     (box :class "indicator"
         (box :class "tray_box2" :orientation "h" :space-evenly false
             (systray :hexpand true :halign "center" :pack-direction "left" :spacing 5)
