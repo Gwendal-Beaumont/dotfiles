@@ -1,18 +1,4 @@
-(defwidget indicator []
-    (button :onclick "scripts/toggle_control_center.sh" :class "indicator"
-        (box :orientation "h" :space-evenly false
-            (recorder_icon)
-            (network_icon)
-            (do-not-disturb_icon)
-            (theme_icon)
-            (volume_icon)
-            (battery_icon)
-            (clock)
-        )
-    )
-)
-
-(defwidget indicatorv2 []
+(defwidget indicators []
     (box :class "indicator"
         (box :orientation "h" :space-evenly false
             (recorder_icon)

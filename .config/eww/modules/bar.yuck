@@ -6,7 +6,7 @@
         )
 
         (box :orientation "h" :space-evenly false :halign "end"
-            (indicatorv2)
+            (indicators)
             (tray2)
             (clock)
         )
