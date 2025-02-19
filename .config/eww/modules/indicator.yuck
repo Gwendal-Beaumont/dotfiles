@@ -42,6 +42,7 @@
 
 (defwidget volume_icon []
     (eventbox :onscroll "scripts/change_volume_onscroll.sh {} ${volume.percentage}"
+        :onrightclick "wpctl set-mute @DEFAULT_SINK@ toggle"
         (state_icon :condition true
                     :text {volume.status == "MUTED" ? "󰸈 ${volume.percentage}%" : volume.percentage < 33 ? " ${volume.percentage}%" : volume.percentage < 67 ? " ${volume.percentage}%" : " ${volume.percentage}%"}
         )
