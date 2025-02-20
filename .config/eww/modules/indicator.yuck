@@ -58,7 +58,7 @@
 )
 
 (defwidget idevice_battery_icon []
-    (state_icon :condition {idevice_detected == true ? true : false}
-                :text " 100%"
+    (state_icon :condition {idevice_detected}
+        :text " ${idevice_info.capacity}%"
     )
 )
