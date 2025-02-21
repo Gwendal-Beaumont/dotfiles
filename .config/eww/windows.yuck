@@ -92,3 +92,29 @@
     :namespace "eww"
     (tray)
 )
+
+(defwindow example_dropdown
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry
+                    :anchor "top right"
+                    :x "1.5%"
+                    :width "2px"
+                    :height "2px"
+                )
+    :namespace "eww"
+    (example_dropdown)
+)
+
+(defwindow network_dropdown
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry
+                    :anchor "top right"
+                    :x "100px"
+                    :width "2px"
+                    :height "2px"
+                )
+    :namespace "eww"
+    (network_dropdown)
+)

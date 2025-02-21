@@ -11,6 +11,9 @@
 (defvar recorder_region false)
 
 (defvar idevice_detected false)
+(defvar airplane_mode false)
+(defvar open_example_dropdown false)
+(defvar open_network_dropdown false)
 
 ; POLLS
 
@@ -21,6 +24,10 @@
     :interval "30s"
     :inital "{'name': '', 'capacity': 0}"
     "scripts/idevice_battery.sh")
+
+(defpoll wireless_networks
+    :interval "30s"
+    "scripts/list_networks.sh")
 
 ; LISTENS
 

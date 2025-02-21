@@ -1,0 +1,22 @@
+(defwidget network_entry [network]
+    (button :onclick "nmcli dev wifi connect '${network.SSID}'"
+        (box :orientation "h" :space-evenly false
+            (box :orientation "h" :space-evenly false :hexpand true :width 200
+                (label :text "${network.IN-USE == "*" ? "󰄬" : ""} ${network.SSID}" :truncate true)
+            )
+
+            (box :orientation "h" :space-evenly true :width 30
+                (label :text "${network.SECURITY == "" ? "" : ""}")
+                (label :text "${network.SIGNAL > 75 ? "󰤨" : network.SIGNAL > 50 ? "󰤥" : network.SIGNAL > 25 ? "󰤢" : "󰤟"}")
+            )
+        )
+    )
+)
+
+(defwidget network_list []
+    (box :orientation "v" :space-evenly true
+        (for network in wireless_networks
+            (network_entry :network network)
+        )
+    )
+)
