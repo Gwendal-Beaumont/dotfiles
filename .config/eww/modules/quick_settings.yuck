@@ -6,7 +6,7 @@
         )
         (box :orientation "h" :space-evenly true
             (theme)
-            (recorder)
+            (airplane_toggle)
         )
     )
 )
@@ -19,7 +19,7 @@
             )
             (box :orientation "v" :class "quick-settings-info" :space-evenly false :halign "end" :valign "center"
                 (box :orientation "h" :space-evenly false :halign "start"
-                    (label :class "quick-settings-text" :text {label})
+                    (label :class "quick-settings-text" :text {label} :truncate true)
                 )
                 (box :orientation "h" :space-evenly false :halign "start"
                     (label :class {condition ? "quick-settings-state" : "quick-settings-state quick-settings-state-enabled"} :text {condition ? "Off" : "On"})
@@ -62,5 +62,14 @@
                             :icon "󱎖"
                             :label "Dark mode"
                             :class "left-bottom-plite"
+    )
+)
+
+(defwidget airplane_toggle []
+    (quick_settings_button  :condition {airplane_mode == false}
+                            :action "scripts/toggle_airplane_mode.sh"
+                            :icon "󰀝"
+                            :label "Aeroplane mode"
+                            :class ""
     )
 )
