@@ -2,7 +2,6 @@
 
 (defvar open_control_center false)
 (defvar open_osd false)
-(defvar open_launcher false)
 (defvar open_tray false)
 (defvar clipboard "[]")
 (defvar ANIM_DURATION "250ms")
@@ -63,3 +62,6 @@
 
 (deflisten notifications :initial '{"count": 0, "notifications": [], "popups": []}'
 "scripts/notifications.sh current")
+
+(deflisten wifi_enabled :inital "disabled"
+"nmcli -t g | awk -F: '{print $4}'; nmcli monitor | rg --line-buffered 'available' | while read -r _; do nmcli -t g | awk -F: '{print $4}'; done")

@@ -1,0 +1,9 @@
+.network-entry {
+    margin: 0.2rem 0;
+    padding: 0.3rem 0.2rem;
+    border-radius: 0.4rem;
+}
+
+.network-entry:hover {
+    background-color: mix($surfaceVariant, $onSurfaceVariant, 70%);
+}

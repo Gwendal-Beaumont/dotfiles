@@ -72,28 +72,23 @@
 
 (defwidget network_icon []
     (state_icon :condition true
-                :onclick "scripts/toggle_network_dropdown.sh"
+                :onclick {open_network_dropdown ? "eww close network_dropdown && eww update open_network_dropdown='false'" : "eww open network_dropdown && eww update open_network_dropdown='true'"}
                 :text {network.essid == "lo" ? "󰤭" : network.signal == "" ? "󰤩" : network.signal < 25 ? "󰤟" : network.signal < 50 ? "󰤢" : network.signal < 75 ? "󰤥" : "󰤨"}
                 :limit-width 15
     )
 )
 
 (defwidget network_dropdown []
-    (revealer :transition "slidebottom" :reveal {open_network_dropdown} :duration {ANIM_DURATION}
+    (revealer :transition "crossfade" :reveal {open_network_dropdown} :duration {ANIM_DURATION}
         (box :orientation "v" :space-evenly false :class "control-center"
             (box :orientation "h" :space-evenly true
-                (quick_settings_button  :condition {airplane_mode == false}
-                    :action "rfkill toggle wifi"
-                    :icon "󰤨"
-                    :label "Wifi"
-                    :class ""
-                )
-                (quick_settings_button  :condition {airplane_mode == false}
+                (quick_settings_button  :condition {wifi_enabled == "enabled" ? false : true}
                     :action "rfkill toggle wlan"
-                    :icon ""
-                    :label "Ethernet"
-                    :class ""
+                    :icon "󰤨"
+                    :label "Wi-Fi"
+                    :class "quick-settings-dropdown"
                 )
+                (box)
             )
             (network_list)
         )

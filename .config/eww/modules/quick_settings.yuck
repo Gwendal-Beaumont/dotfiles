@@ -70,6 +70,6 @@
                             :action "scripts/toggle_airplane_mode.sh"
                             :icon "󰀝"
                             :label "Aeroplane mode"
-                            :class ""
+                            :class "right-bottom-plite"
     )
 )

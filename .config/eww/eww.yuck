@@ -15,7 +15,6 @@
 (include "modules/user.yuck")
 (include "modules/workspaces.yuck")
 (include "modules/tray.yuck")
-(include "modules/language.yuck")
 (include "modules/indicator.yuck")
 (include "modules/clock.yuck")
 (include "modules/recorder_menu.yuck")

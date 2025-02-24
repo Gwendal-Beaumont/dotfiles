@@ -1,13 +1,12 @@
 .workspaces {
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin: 0 1rem;
-    background-color: $surfaceVariant;
+    border-radius: 0.4rem;
+    padding: 0.2rem;
+    margin: 0;
 }
 
 .workspace {
     font-size: 1.05rem;
-    border-radius: 1rem;
+    border-radius: 0.4rem;
     background-color: $onPrimary;
     margin: 0 0.25rem;
     padding: 0 0.7rem;
@@ -16,7 +15,7 @@
     &.current {
         color: black;
         background-color: $primary;
-        padding: 0 1.5rem;
+        padding: 0 1.3rem;
     }
 }
 

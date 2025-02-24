@@ -1,5 +1,5 @@
 (defwidget network_entry [network]
-    (button :onclick "nmcli dev wifi connect '${network.SSID}'"
+    (button :onclick "nmcli dev wifi connect '${network.SSID}'" :visible {network.SSID != ""} :class "network-entry"
         (box :orientation "h" :space-evenly false
             (box :orientation "h" :space-evenly false :hexpand true :width 200
                 (label :text "${network.IN-USE == "*" ? "󰄬" : ""} ${network.SSID}" :truncate true)

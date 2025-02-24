@@ -8,7 +8,7 @@
     background-position: center;
     min-height: 6rem;
     min-width: 6rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .music-text {
@@ -27,7 +27,7 @@
     background-color: $primary;
     color: $surface;
     padding: 0.25rem 0.5rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     font-size: 1rem;
 }
 
@@ -42,14 +42,14 @@
 
 .music-scale trough {
     background-color: $surfaceVariant;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     min-height: 0.5rem;
 }
 
 
 .music-scale highlight {
     background-color: $primary;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     min-height: 0.5rem;
 }
 
