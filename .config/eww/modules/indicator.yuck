@@ -73,7 +73,7 @@
 (defwidget network_icon []
     (state_icon :condition true
                 :onclick {open_network_dropdown ? "eww close network_dropdown && eww update open_network_dropdown='false'" : "eww open network_dropdown && eww update open_network_dropdown='true'"}
-                :text {network.essid == "lo" ? "󰤭" : network.signal == "" ? "󰤩" : network.signal < 25 ? "󰤟" : network.signal < 50 ? "󰤢" : network.signal < 75 ? "󰤥" : "󰤨"}
+                :text {network.type == "ethernet" ? "" : network.signal == "" ? "󰤭" : network.signal < 25 ? "󰤟" : network.signal < 50 ? "󰤢" : network.signal < 75 ? "󰤥" : "󰤨"}
                 :limit-width 15
     )
 )

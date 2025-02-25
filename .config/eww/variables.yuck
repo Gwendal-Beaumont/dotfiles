@@ -30,7 +30,7 @@
 
 ; LISTENS
 
-(deflisten network :initial '{"essid": "lo", "signal": ""}'
+(deflisten network :initial '{"essid": "lo", "type": "wireless", "signal": ""}'
 "scripts/network.sh")
 
 (deflisten kb_layout :initial "en"
