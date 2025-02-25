@@ -4,6 +4,8 @@ export PATH="$PATH:$HOME/google-cloud-sdk/bin"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
+export GPG_TTY=$(tty)
+
 # General aliases
 alias psyu="sudo pacman -Syu"
 alias prns="sudo pacman -Rns"
