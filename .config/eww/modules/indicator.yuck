@@ -86,9 +86,14 @@
                     :action "rfkill toggle wlan"
                     :icon "󰤨"
                     :label "Wi-Fi"
-                    :class "quick-settings-dropdown"
+                    :class "left-top-plite"
                 )
-                (box)
+                (quick_settings_button :condition false
+                    :action ""
+                    :icon ""
+                    :label "Ethernet"
+                    :class "right-top-plite"
+                )
             )
             (network_list)
         )
@@ -116,21 +121,5 @@
                     :text {volume.status == "MUTED" ? "󰸈 ${volume.percentage}%" : volume.percentage < 33 ? " ${volume.percentage}%" : volume.percentage < 67 ? " ${volume.percentage}%" : " ${volume.percentage}%"}
                     :limit-width 6
         )
-    )
-)
-
-(defwidget battery_icon []
-    (box :visible {EWW_BATTERY == "" ? false : true}
-        (state_icon :condition true
-                    :text {EWW_BATTERY.BAT0.status == "Charging" ? " ${EWW_BATTERY.BAT0.capacity}%" : EWW_BATTERY.BAT0.capacity > 90 ? " ${EWW_BATTERY.BAT0.capacity}%" : EWW_BATTERY.BAT0.capacity > 75 ? " ${EWW_BATTERY.BAT0.capacity}%" : EWW_BATTERY.BAT0.capacity > 50 ? " ${EWW_BATTERY.BAT0.capacity}%" : EWW_BATTERY.BAT0.capacity > 25 ? " ${EWW_BATTERY.BAT0.capacity}%" : " ${EWW_BATTERY.BAT0.capacity}%"}
-                    :limit-width 6
-        )
-    )
-)
-
-(defwidget idevice_battery_icon []
-    (state_icon :condition {idevice_detected}
-        :text " ${idevice_info.capacity}%"
-        :limit-width 6
     )
 )

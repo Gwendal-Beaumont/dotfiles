@@ -7,21 +7,20 @@
 .workspace {
     font-size: 1.05rem;
     border-radius: 0.4rem;
-    background-color: $onPrimary;
+    background-color: $surface;
     margin: 0 0.25rem;
     padding: 0 0.7rem;
     transition: 0.3s;
 
     &.current {
-        color: black;
-        background-color: $primary;
+        background-color: $inverseOnSurface;
         padding: 0 1.3rem;
     }
 }
 
 .workspace:hover {
-    background-color: mix($onPrimary, $onSurface, 70%);
+    background-color: $inverseOnSurface;
     &.current {
-        background-color: mix($primary, $onSurface, 70%);
+        background-color: $inverseOnSurface;
     }
 }

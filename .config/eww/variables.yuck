@@ -13,6 +13,7 @@
 (defvar airplane_mode false)
 (defvar open_example_dropdown false)
 (defvar open_network_dropdown false)
+(defvar open_battery_dropdown false)
 
 ; POLLS
 
@@ -22,6 +23,7 @@
 (defpoll idevice_info
     :interval "30s"
     :inital "{'name': '', 'capacity': 0}"
+    :run-while idevice_detected
     "scripts/idevice_battery.sh")
 
 (defpoll wireless_networks

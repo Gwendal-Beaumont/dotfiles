@@ -105,3 +105,16 @@
     :namespace "eww"
     (network_dropdown)
 )
+
+(defwindow battery_dropdown
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry
+                    :anchor "top right"
+                    :x "100px"
+                    :width "2px"
+                    :height "2px"
+                )
+    :namespace "eww"
+    (battery_dropdown)
+)

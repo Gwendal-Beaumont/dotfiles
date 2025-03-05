@@ -14,7 +14,7 @@
 )
 
 (defwidget network_list []
-    (box :orientation "v" :space-evenly true
+    (box :orientation "v" :space-evenly true :width 230
         (for network in wireless_networks
             (network_entry :network network)
         )
