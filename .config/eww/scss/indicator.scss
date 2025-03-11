@@ -7,11 +7,12 @@
 }
 
 .indicator-icon {
-    margin: 0 0.35rem;
+    margin: 0 0.15rem;
+    padding: 0 0.5rem;
     font-size: 1.3rem;
 }
 
-.indicator:hover {
+.indicator:active {
     background-color: mix($surfaceVariant, $onSurfaceVariant, 70%);
 }
 
