@@ -16,18 +16,15 @@ bindkey '^[[1;5D' backward-word
 # bindkey ";5C" forward-word
 # bindkey ";5D" backward-word
 
-# Flux
-command -v flux >/dev/null && . <(flux completion zsh)
+export GPG_TTY=$(tty)
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/gwendal/google-cloud-sdk/path.zsh.inc' ]; then . '/home/gwendal/google-cloud-sdk/path.zsh.inc'; fi
+source $HOME/bin/flux_completions
+source $HOME/bin/kubectl_completions
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/gwendal/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/gwendal/google-cloud-sdk/completion.zsh.inc'; fi
-
-source <(kubectl completion zsh)
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source /usr/local/bin/checkvpn
+source /usr/share/nvm/init-nvm.sh

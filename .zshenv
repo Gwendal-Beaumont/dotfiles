@@ -1,8 +1,7 @@
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type f"
-export PATH="$PATH:$HOME/google-cloud-sdk/bin"
 export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$PATH:$HOME/go/bin/"
 
 export GPG_TTY=$(tty)
 
@@ -29,6 +28,8 @@ alias ll="ls -l"
 alias lla="ls -la"
 
 # Git
+alias lg="lazygit"
+
 alias g="git"
 alias gl="git log --oneline --decorate"
 alias ga="git add"
