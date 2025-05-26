@@ -1,0 +1,6 @@
+configuration {
+	modes: [ combi ];
+	combi-modes: [ drun, filebrowser, ssh ];
+}
+
+@theme "/home/gwendal/.local/share/rofi/themes/spotlight.rasi"
