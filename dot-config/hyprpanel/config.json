@@ -131,5 +131,8 @@
   "menus.media.displayTime": true,
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Mozilla Firefox",
   "bar.customModules.netstat.networkInterface": "enp0s13f0u2u4",
-  "theme.bar.buttons.background": "#1c1c1c"
+  "theme.bar.buttons.background": "#1c1c1c",
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }
