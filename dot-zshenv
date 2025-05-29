@@ -1,7 +1,9 @@
+export PATH=$HOME/development/flutter/bin:$PATH
+export PATH=$HOME/go/bin/:$PATH
+
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="$PATH:$HOME/go/bin/"
 
 export GPG_TTY=$(tty)
 
@@ -14,8 +16,6 @@ alias e="nvim"
 alias open="xdg-open"
 alias o="xdg-open"
 alias phd="cd $HOME/Documents/twindevops/"
-alias tobi="hyprctl keyword monitor 'eDP-1, disable'"
-alias tonbi="hyprctl keyword monitor 'eDP-1, 1920x1080@60, 0x0, 1'"
 
 # Kitty related
 alias d="kitten diff"
