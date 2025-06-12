@@ -8,9 +8,6 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export GPG_TTY=$(tty)
 
 # General aliases
-alias psyu="sudo pacman -Syu"
-alias prns="sudo pacman -Rns"
-alias psy="sudo pacman -S --noconfirm"
 alias vim="nvim"
 alias e="nvim"
 alias open="xdg-open"
