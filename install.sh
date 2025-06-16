@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 STOW_SRC="."
 STOW_TARGET="$HOME"
