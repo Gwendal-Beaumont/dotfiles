@@ -1,6 +1,18 @@
-install.sh
-README.md
+# Top-level files
+
+/.install.sh
+/.README.md
 .git
 .gitmodules
 .gitignore
-dot-config/home-manager
+
+# Folders
+./dot-config/eww
+./dot-config/hypr
+./dot-config/hyprpanel
+./dot-config/kitty
+./dot-config/mako
+./dot-config/rofi
+./dot-config/tmux
+./dot-config/waybar
+./dot-config/wlogout
