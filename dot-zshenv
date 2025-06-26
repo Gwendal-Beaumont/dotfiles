@@ -14,6 +14,9 @@ alias open="xdg-open"
 alias o="xdg-open"
 alias phd="cd $HOME/Documents/twindevops/"
 
+alias nrs="sudo nixos-rebuild switch"
+alias nfu="nix flake update --flake ~/nix-configuration/"
+
 # Kitty related
 alias d="kitten diff"
 alias gd="git difftool --no-symlinks --dir-diff"
