@@ -7,7 +7,7 @@
 .gitignore
 
 # Folders
-./dot-config/eww
+dot-config/eww
 ./dot-config/hypr
 ./dot-config/hyprpanel
 ./dot-config/kitty

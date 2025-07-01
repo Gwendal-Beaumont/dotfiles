@@ -1,8 +1,0 @@
-(defwidget clock []
-    (button :onclick {open_control_center ? "eww close control_center && eww update open_control_center='false'" : "eww open control_center && eww update open_control_center='true'"}
-        :class "indicator"
-        (box :orientation "h" :space-evenly false
-            (label :class "clock" :text {formattime(EWW_TIME, "%H:%M")})
-        )
-    )
-)
